@@ -1,0 +1,41 @@
+#MainMenu {
+    visibility: hidden;
+}
+footer {
+    visibility: hidden;
+}
+h1, h2 {
+    color: red;
+}
+.stInfo {
+    color: yellow;
+    background-color: red;
+    border: 1px solid red;
+    padding: 5px;
+    border-radius: 5px;
+}
+.title {
+    color: magenta;
+}
+.app {
+    color: orange !important;
+    font-size: large;
+}
+.custom-text {
+    color: blue;
+}
+.sub {
+    color: green;
+    font-size: large;
+}
+.sidebar-header {
+    color: green;
+}
+.sidebar-title {
+    color: blue;
+}
+.pub{
+    color: rgb(0, 71, 104);
+    font-size: xx-large;
+}
+
