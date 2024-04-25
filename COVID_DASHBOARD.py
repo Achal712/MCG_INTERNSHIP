@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import numpy as np
 
 # Load CSS file
 def local_css(file_path):
@@ -12,7 +13,7 @@ local_css("styles.css")
 st.markdown('<h1 class="title">Covid-19 World-wide Cases</h1>', unsafe_allow_html=True)
 
 # Load COVID-19 data
-@st.cache_data
+@st.cache_resource
 def load_data():
     data = pd.read_csv("country_wise_latest.csv")
     return data
@@ -36,7 +37,7 @@ st.markdown(f'<div class="sub">Total confirmed cases:</div>', unsafe_allow_html=
 # Display total confirmed cases in a container
 latest_cases = df[1]
 st.markdown(f'<div class="stInfo">{latest_cases}</div>', unsafe_allow_html=True)
-
+    
 # Main section
 st.markdown('<div class="pub">Visualization</div>', unsafe_allow_html=True)
 col1, col2 = st.columns(2)
@@ -59,7 +60,17 @@ with col2:
 st.header('Pie Chart for COVID-19 Cases')
 cases_labels = ['Confirmed', 'Deaths', 'Recovered', 'Active']
 cases_data = [df['Confirmed'], df['Deaths'], df['Recovered'], df['Active']]
+fig = px.pie(values=cases_data, names=cases_labels)
+st.plotly_chart(fig)
 
+# # Generate random data for 'Male', 'Female', and 'Children' columns
+# df['Male'] = np.random.randint(0, df['Confirmed'] // 2)
+# df['Female'] = np.random.randint(0, df['Confirmed'] // 2)
+# df['Children'] = df['Confirmed'] - df['Male'] - df['Female']
+
+st.header('Male female Pie Chart')
+cases_labels = ['Male', 'Female', 'Children']
+cases_data = [df['Male'], df['Female'], df['Children']]
 fig = px.pie(values=cases_data, names=cases_labels)
 st.plotly_chart(fig)
 
