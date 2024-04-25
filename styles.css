@@ -1,41 +1,55 @@
-#MainMenu {
-    visibility: hidden;
+body, .stApp {
+    background-color: aliceblue; /* Change the background color as needed */
 }
-footer {
-    visibility: hidden;
-}
+
 h1, h2 {
     color: red;
 }
 .stInfo {
     color: yellow;
     background-color: red;
+    font-size: 25px;
     border: 1px solid red;
     padding: 5px;
     border-radius: 5px;
 }
 .title {
     color: magenta;
+    font-size: 50px;
 }
 .app {
     color: orange !important;
     font-size: large;
+    font-size: 25px;
 }
 .custom-text {
     color: blue;
+    
 }
 .sub {
     color: green;
-    font-size: large;
+    font-size: 20px;
+    
+}
+.sub1 {
+    color: green;
+    font-size: 30px;
+    
 }
 .sidebar-header {
     color: green;
+    font-size: 100px;
+    
 }
 .sidebar-title {
     color: blue;
 }
 .pub{
     color: rgb(0, 71, 104);
-    font-size: xx-large;
+    font-size: 40px;
 }
-
+.element.style {
+    position: relative;
+    width: 200px;
+    height: 250px;
+}
