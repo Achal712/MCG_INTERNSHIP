@@ -62,12 +62,6 @@ cases_labels = ['Confirmed', 'Deaths', 'Recovered', 'Active']
 cases_data = [df['Confirmed'], df['Deaths'], df['Recovered'], df['Active']]
 fig = px.pie(values=cases_data, names=cases_labels)
 st.plotly_chart(fig)
-
-# # Generate random data for 'Male', 'Female', and 'Children' columns
-# df['Male'] = np.random.randint(0, df['Confirmed'] // 2)
-# df['Female'] = np.random.randint(0, df['Confirmed'] // 2)
-# df['Children'] = df['Confirmed'] - df['Male'] - df['Female']
-
 st.header('Male female Pie Chart')
 cases_labels = ['Male', 'Female', 'Children']
 cases_data = [df['Male'], df['Female'], df['Children']]
@@ -79,4 +73,7 @@ st.sidebar.markdown(f'<p class="custom-text">Confirmed: {df["Confirmed"]}</p>', 
 st.sidebar.markdown(f'<p class="custom-text">Deaths: {df["Deaths"]}</p>', unsafe_allow_html=True)
 st.sidebar.markdown(f'<p class="custom-text">Recovered: {df["Recovered"]}</p>', unsafe_allow_html=True)
 st.sidebar.markdown(f'<p class="custom-text">Active: {df["Active"]}</p>', unsafe_allow_html=True)
+st.sidebar.markdown(f'<p class="custom-text">Male: {df["Male"]}</p>', unsafe_allow_html=True)
+st.sidebar.markdown(f'<p class="custom-text">Female: {df["Female"]}</p>', unsafe_allow_html=True)
+st.sidebar.markdown(f'<p class="custom-text">Children: {df["Children"]}</p>', unsafe_allow_html=True)
 st.set_option('deprecation.showPyplotGlobalUse', False)
